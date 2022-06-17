@@ -10,4 +10,9 @@ export default class Building {
     this._sqft = sqft;
   }
 
-  
+  // sqft getter
+  get sqft() {
+    return this._sqft;
+  }
+}
+
