@@ -9,4 +9,3 @@ export default function updateStudentGradeByCity(arrayOfObjects, city, newGrades
     }
     return obj;
   });
-}
