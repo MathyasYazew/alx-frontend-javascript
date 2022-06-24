@@ -4,4 +4,4 @@ export default function getStudentIdSum(arrayOfObjects) {
   }
   return arrayOfObjects.map((object) => object.id).reduce((prev, curr) => prev + curr);
   // console.log(arrayOfObjects)
-
+}
