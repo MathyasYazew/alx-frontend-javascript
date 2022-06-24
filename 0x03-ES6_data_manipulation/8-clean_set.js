@@ -19,3 +19,4 @@ export default function cleanSet(set, startString) {
     concatStr = strArray.join('-');
   }
   return concatStr;
+}
