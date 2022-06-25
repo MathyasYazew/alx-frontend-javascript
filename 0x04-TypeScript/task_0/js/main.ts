@@ -1,3 +1,5 @@
+/** Renders table based on a list of objects */
+
 interface Student {
   firstName: string;
   lastName: string;
@@ -5,23 +7,34 @@ interface Student {
   location: string;
 }
 
-const student1: Student = {
-  firstName: 'Frank',
-  lastName: 'Bauer',
-  age: 22,
-  location: 'Canada'
+const studentA: Student = {
+  firstName: 'Sofia',
+  lastName: 'Cheung',
+  age: 19,
+  location: 'California',
 }
 
-const student2: Student = {
-  firstName: 'Jessica',
-  lastName: 'Ambers',
-  age: 22,
-  location: 'Austrialia'
+const studentB: Student = {
+  firstName: 'Mafer',
+  lastName: 'Morales',
+  age: 19,
+  location: 'Panama',
 }
 
-const studentsArr: Student[] = [student1, student2]
-let table = ''
-for (const student of studentsArr) {
-  table += `${student.firstName} ${student.location}\n`
-}
-console.log(table)
+const studentList = [studentA, studentB];
+
+const table = document.createElement('table');
+const tbody = document.createElement('tbody');
+
+studentList.forEach((obj) => {
+  const row = document.createElement('tr');
+  const cellName = document.createElement('td');
+  const cellLocation = document.createElement('td');
+  cellName.textContent = obj.firstName;
+  cellLocation.textContent = obj.location;
+  row.appendChild(cellName);
+  row.appendChild(cellLocation);
+  tbody.appendChild(row);
+});
+table.appendChild(tbody);
+document.body.appendChild(table);
